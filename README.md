@@ -28,9 +28,9 @@ Rakendus on mõeldud inimestele, kes soovivad:
 - saavutada tervise- või kehakaaluga seotud eesmärke
 
 ## Grupiliikmed
-- [Vitali Kolesnikov]
-- [Aleksandr Gritsenko]
-- [Emil Munassypov]
+- Vitali Kolesnikov
+- Aleksandr Gritsenko
+- Emil Munassypov
 
 ## Kasutatav arendusmudel
 Meie projektis kasutame agiilset arendusmudelit, täpsemalt Scrum-metoodikat.
