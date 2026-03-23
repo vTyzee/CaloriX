@@ -35,10 +35,10 @@ Rakendus on mõeldud inimestele, kes soovivad:
 ## Kasutatav arendusmudel
 Meie projektis kasutame agiilset arendusmudelit, täpsemalt Scrum-metoodikat.
 
-## Miks valisime Scrum'i?
-Valisime Scrum'i, sest see sobib hästi meeskonnaprojekti jaoks. 
-Scrum võimaldab jagada arenduse väiksemateks etappideks ehk sprintideks, määrata igale liikmele konkreetsed ülesanded ja jälgida regulaarselt projekti edenemist. 
-Samuti on selle mudeli eelis paindlikkus – vajadusel saame funktsionaalsust muuta või täiendada projekti käigus.
+## Miks valisime Kanbani?
+Valisime Kanbani, sest see on lihtne ja visuaalne arendusmudel, mis sobib hästi meie meeskonnaprojekti jaoks. 
+Kanban aitab meil ülesandeid selgelt jagada, jälgida töö edenemist ja hoida kogu projekt organiseerituna. 
+Selle mudeli eelis on paindlikkus, sest vajadusel saame ülesandeid kiiresti ümber korraldada ja prioriteete muuta.
 
 ## Kuidas me plaanime töötada?
 - jagame projekti sprintideks
