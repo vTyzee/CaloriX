@@ -1,5 +1,9 @@
 # CaloriX
 
+## Projekti "Welcome" disain
+<img width="343" height="670" alt="image" src="https://github.com/user-attachments/assets/6e0e57ff-1511-4f94-990f-8dac0c55ed27" />
+
+
 ## Projekti nimi
 CaloriX – kalorite ja toitumise jälgimise mobiilirakendus
 
