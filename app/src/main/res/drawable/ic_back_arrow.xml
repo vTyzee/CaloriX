@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="35dp"
+    android:height="15dp"
+    android:viewportWidth="35"
+    android:viewportHeight="14.73">
+    <!-- Notice the path in Figma was pointing right (L34.7,8.07). The design shows a left-pointing arrow. We will rotate the icon in Compose or apply a simple scaleX="-1" on the vector later. -->
+    <path
+        android:pathData="M34.71,8.07C35.1,7.68 35.1,7.05 34.71,6.66L28.34,0.29C27.95,-0.1 27.32,-0.1 26.93,0.29C26.54,0.68 26.54,1.32 26.93,1.71L32.59,7.36L26.93,13.02C26.54,13.41 26.54,14.04 26.93,14.44C27.32,14.83 27.95,14.83 28.34,14.44L34.71,8.07ZM0,7.36V8.36H34V7.36V6.36H0V7.36Z"
+        android:fillColor="#000000"/>
+</vector>
