@@ -35,7 +35,7 @@ Rakendus on mõeldud inimestele, kes soovivad:
 - Emil Munassypov
 
 ## Kasutatav arendusmudel
-Meie projektis kasutame agiilset arendusmudelit, täpsemalt Scrum-metoodikat.
+Meie projektis kasutame agiilset arendusmudelit, täpsemalt Kanbani-metoodikat.
 
 ## Miks valisime Kanbani?
 Valisime Kanbani, sest see on lihtne ja visuaalne arendusmudel, mis sobib hästi meie meeskonnaprojekti jaoks. 
