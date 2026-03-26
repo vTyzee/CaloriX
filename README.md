@@ -71,3 +71,14 @@ Edaspidi soovime lisada:
 - **UI:** Jetpack Compose
 - **Andmed:** Firebase
 
+- ## Projekti struktuur
+- `com.example.calorix/` – Rakenduse loogika ja vaated:
+    - `MainActivity.kt` – Rakenduse peamine sisenemispunkt ja navigeerimine.
+    - `WelcomeScreen.kt`, `LoginScreen.kt` jne – Kasutajaliidese ekraanid.
+    - `ui/theme/` – Disainisüsteem (värvid, fondid ja teemad).
+- `res/` – Rakenduse ressursid:
+    - `drawable/` – Ikoonid, logod ja graafilised elemendid.
+    - `font/` – Kohandatud Nunito fondid.
+    - `values/` – Tekstikonstandid (`strings.xml`) ja süsteemsed värvid.
+- `Gradle/` – Projekti seadistused ja raamatukogude haldus.
+
