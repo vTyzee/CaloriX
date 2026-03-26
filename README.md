@@ -69,8 +69,7 @@ Edaspidi soovime lisada:
 - **IDE:** Android Studio
 - **Keel:** Kotlin
 - **UI:** Jetpack Compose
-- **Arhitektuur:** MVVM
-- **Andmed:** Room, Firebase, Retrofit
+- **Andmed:** Firebase
 
 ## Projekti struktuur
 - `data/` – andmete haldus (API, DB, repositories)
