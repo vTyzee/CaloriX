@@ -71,10 +71,3 @@ Edaspidi soovime lisada:
 - **UI:** Jetpack Compose
 - **Andmed:** Firebase
 
-## Projekti struktuur
-- `data/` – andmete haldus (API, DB, repositories)
-- `model/` – andmemudelid
-- `ui/` – ekraanid, komponendid ja teemad
-- `viewmodel/` – vaadete äriloogika
-- `di/` – dependency injection (Hilt/Koin)
-- `util/` – abifunktsioonid
