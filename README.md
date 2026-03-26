@@ -64,3 +64,18 @@ Edaspidi soovime lisada:
 - veetarbimise jälgimise
 - iganädalased statistilised ülevaated
 - visuaalsed graafikud kasutaja edenemise kohta
+
+## Tehnoloogiad
+- **IDE:** Android Studio
+- **Keel:** Kotlin
+- **UI:** Jetpack Compose
+- **Arhitektuur:** MVVM
+- **Andmed:** Room, Firebase, Retrofit
+
+## Projekti struktuur
+- `data/` – andmete haldus (API, DB, repositories)
+- `model/` – andmemudelid
+- `ui/` – ekraanid, komponendid ja teemad
+- `viewmodel/` – vaadete äriloogika
+- `di/` – dependency injection (Hilt/Koin)
+- `util/` – abifunktsioonid
