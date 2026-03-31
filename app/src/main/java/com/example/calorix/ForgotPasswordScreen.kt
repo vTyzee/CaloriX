@@ -13,7 +13,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
@@ -26,7 +28,8 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ForgotPasswordScreen(
-    onNavigateBack: () -> Unit = {}
+    onNavigateBack: () -> Unit = {},
+    onNavigateToUusParool: () -> Unit = {}
 ) {
     val nunitoRegular = FontFamily(Font(R.font.nunito_regular))
     val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
@@ -38,39 +41,26 @@ fun ForgotPasswordScreen(
             .fillMaxSize()
             .background(Color(0xFFE6E8E6))
     ) {
-        // Top-right corner decorative shapes
-        Box(
-            modifier = Modifier.align(Alignment.TopEnd)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.corner_shape_back),
-                contentDescription = null,
-                modifier = Modifier
-                    .width(97.dp)
-                    .height(109.dp),
-                contentScale = ContentScale.FillBounds
-            )
-            Image(
-                painter = painterResource(id = R.drawable.corner_shape_front),
-                contentDescription = null,
-                modifier = Modifier
-                    .width(82.dp)
-                    .height(92.dp)
-                    .align(Alignment.TopEnd),
-                contentScale = ContentScale.FillBounds
-            )
-        }
+        // Top banner wave
+        Image(
+            painter = painterResource(id = R.drawable.ic_top_wave),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxWidth()
+                .scale(2.75f)
+                .align(Alignment.TopCenter),
+            contentScale = ContentScale.FillWidth
+        )
 
         // Bottom wave
         Image(
             painter = painterResource(id = R.drawable.ic_wave_bottom),
             contentDescription = null,
             modifier = Modifier
-                .fillMaxWidth()
                 .align(Alignment.BottomCenter)
-                // Adjusting the bottom alignment to match the other screens if needed, 
-                // but the wave itself usually fills the bottom part
-                .fillMaxWidth(),
+                .offset(x = 40.dp, y = 50.dp)
+                .width(3000.dp)
+                .wrapContentWidth(unbounded = true),
             contentScale = ContentScale.FillWidth
         )
 
@@ -81,29 +71,32 @@ fun ForgotPasswordScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 10.dp)
         ) {
-            // Header: Logo + CaloriX (centered)
-            Row(
+            // Header: Logo, CaloriX (perfectly centered)
+            Spacer(modifier = Modifier.height(60.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_logo),
+                contentDescription = "CaloriX Logo",
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 22.dp)
-                    .height(80.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_logo),
-                    contentDescription = "CaloriX Logo",
-                    modifier = Modifier.size(80.dp)
-                )
-                Spacer(modifier = Modifier.width(12.dp))
-                Text(
-                    text = "CaloriX",
-                    fontSize = 32.sp,
-                    color = Color(0xFF548C64),
-                    fontFamily = nunitoMedium,
-                    textAlign = TextAlign.Center
-                )
-            }
+                    .size(125.dp) // layout остаётся прежним
+                    .graphicsLayer {
+                        scaleX = 1.25f
+                        scaleY = 1.25f
+                    }
+                    .align(Alignment.CenterHorizontally)
+                    .wrapContentWidth(unbounded = true)
+                    .offset(y = 28.dp)
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Text(
+                text = "CaloriX",
+                fontSize = 24.sp,
+                color = Color(0xFF548C64),
+                fontFamily = nunitoMedium,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
 
             // "Parooli vahetamine" title
             Spacer(modifier = Modifier.height(20.dp))
@@ -168,7 +161,7 @@ fun ForgotPasswordScreen(
             // "Saada email" button
             Spacer(modifier = Modifier.height(30.dp))
             Button(
-                onClick = { /* TODO: Send reset email logic */ },
+                onClick = { onNavigateToUusParool() },
                 modifier = Modifier
                     .size(200.dp, 50.dp)
                     .align(Alignment.CenterHorizontally),
@@ -186,29 +179,26 @@ fun ForgotPasswordScreen(
             }
 
             // "Mine tagasi" back link 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             Row(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .align(Alignment.CenterHorizontally)
                     .clickable { onNavigateBack() },
-                horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Image(
+                Icon(
                     painter = painterResource(id = R.drawable.ic_back_arrow),
-                    contentDescription = "Back arrow",
-                    modifier = Modifier
-                        .size(34.dp, 15.dp)
-                        .rotate(180f) // The original vector points right, so we rotate 180 to point left
+                    contentDescription = "Back",
+                    modifier = Modifier.size(12.dp),
+                    tint = Color.Black
                 )
-                Spacer(modifier = Modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(4.dp))
                 Text(
                     text = "Mine tagasi",
-                    fontSize = 15.sp,
+                    fontSize = 12.sp,
                     color = Color.Black,
                     fontFamily = nunitoRegular,
-                    textDecoration = TextDecoration.Underline,
-                    textAlign = TextAlign.Center
+                    textDecoration = TextDecoration.Underline
                 )
             }
         }

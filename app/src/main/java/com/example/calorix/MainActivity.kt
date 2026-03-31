@@ -56,6 +56,18 @@ class MainActivity : ComponentActivity() {
                     ForgotPasswordScreen(
                         onNavigateBack = {
                             navController.popBackStack()
+                        },
+                        onNavigateToUusParool = {
+                            navController.navigate("uus_parool")
+                        }
+                    )
+                }
+                composable("uus_parool") {
+                    UusParoolScreen(
+                        onNavigateToLogin = {
+                            navController.navigate("login") {
+                                popUpTo("welcome")
+                            }
                         }
                     )
                 }

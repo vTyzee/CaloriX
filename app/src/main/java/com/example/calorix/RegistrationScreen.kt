@@ -15,7 +15,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
@@ -49,53 +51,16 @@ fun RegistrationScreen(
             .fillMaxSize()
             .background(Color(0xFFE6E8E6))
     ) {
-        // Top-right corner decorative shapes (same as login)
-        Box(
-            modifier = Modifier.align(Alignment.TopEnd)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.corner_shape_back),
-                contentDescription = null,
-                modifier = Modifier
-                    .width(110.dp)
-                    .height(124.dp),
-                contentScale = ContentScale.FillBounds
-            )
-            Image(
-                painter = painterResource(id = R.drawable.corner_shape_front),
-                contentDescription = null,
-                modifier = Modifier
-                    .width(93.dp)
-                    .height(105.dp)
-                    .align(Alignment.TopEnd),
-                contentScale = ContentScale.FillBounds
-            )
-        }
-
-        // Bottom-left corner decorative shapes (rotated 180°)
-        Box(
+        // Top banner wave
+        Image(
+            painter = painterResource(id = R.drawable.ic_top_wave),
+            contentDescription = null,
             modifier = Modifier
-                .align(Alignment.BottomStart)
-                .rotate(180f)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.corner_shape_back),
-                contentDescription = null,
-                modifier = Modifier
-                    .width(110.dp)
-                    .height(124.dp),
-                contentScale = ContentScale.FillBounds
-            )
-            Image(
-                painter = painterResource(id = R.drawable.corner_shape_front),
-                contentDescription = null,
-                modifier = Modifier
-                    .width(93.dp)
-                    .height(105.dp)
-                    .align(Alignment.TopEnd),
-                contentScale = ContentScale.FillBounds
-            )
-        }
+                .fillMaxWidth()
+                .scale(2.75f)
+                .align(Alignment.TopCenter),
+            contentScale = ContentScale.FillWidth
+        )
 
         // Scrollable content
         Column(
@@ -104,68 +69,42 @@ fun RegistrationScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 10.dp)
         ) {
-            // Header: Logo + CaloriX (centered)
-            Row(
+            // Header: Logo, CaloriX (perfectly centered)
+            Spacer(modifier = Modifier.height(60.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.ic_logo),
+                contentDescription = "CaloriX Logo",
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 22.dp)
-                    .height(80.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_logo),
-                    contentDescription = "CaloriX Logo",
-                    modifier = Modifier.size(80.dp)
-                )
-                Spacer(modifier = Modifier.width(12.dp))
-                Text(
-                    text = "CaloriX",
-                    fontSize = 32.sp,
-                    color = Color(0xFF548C64),
-                    fontFamily = nunitoMedium,
-                    textAlign = TextAlign.Center
-                )
-            }
+                    .size(125.dp) // layout остаётся прежним
+                    .graphicsLayer {
+                        scaleX = 1.25f
+                        scaleY = 1.25f
+                    }
+                    .align(Alignment.CenterHorizontally)
+                    .wrapContentWidth(unbounded = true)
+                    .offset(y = 28.dp)
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Text(
+                text = "CaloriX",
+                fontSize = 24.sp,
+                color = Color(0xFF548C64),
+                fontFamily = nunitoMedium,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
 
             // "Registreerimine" title
             Spacer(modifier = Modifier.height(10.dp))
             Text(
                 text = "Registreerimine",
-                fontSize = 25.sp,
+                fontSize = 28.sp,
                 color = Color.Black,
                 fontFamily = nunitoRegular,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth()
-            )
-
-            // "Kas sul on juba konto? Logi sisse."
-            Spacer(modifier = Modifier.height(4.dp))
-            val annotatedLogin = buildAnnotatedString {
-                withStyle(SpanStyle(
-                    color = Color.Black,
-                    fontSize = 10.sp,
-                    fontFamily = nunitoRegular
-                )) {
-                    append("Kas sul on juba konto? ")
-                }
-                pushStringAnnotation(tag = "login", annotation = "login")
-                withStyle(SpanStyle(
-                    color = Color(0xFF448AFF),
-                    fontSize = 10.sp,
-                    fontFamily = nunitoRegular,
-                    textDecoration = TextDecoration.Underline
-                )) {
-                    append("Logi sisse.")
-                }
-                pop()
-            }
-            Text(
-                text = annotatedLogin,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { onNavigateToLogin() }
             )
 
             // ---- Nimi field ----
@@ -370,20 +309,73 @@ fun RegistrationScreen(
             Button(
                 onClick = { /* TODO: Handle registration */ },
                 modifier = Modifier
-                    .size(140.dp, 50.dp)
+                    .size(150.dp, 54.dp)
                     .align(Alignment.CenterHorizontally),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFF62A87C),
                     contentColor = Color.White
                 ),
-                shape = RoundedCornerShape(10.dp)
+                shape = RoundedCornerShape(16.dp)
             ) {
                 Text(
                     text = "Register",
-                    fontSize = 18.sp,
+                    fontSize = 20.sp,
                     fontFamily = nunitoSemiBold
                 )
             }
+
+            // "Mine tagasi"
+            Spacer(modifier = Modifier.height(10.dp))
+            Row(
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .clickable { onNavigateBack() },
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_back_arrow),
+                    contentDescription = "Back",
+                    modifier = Modifier.size(12.dp),
+                    tint = Color.Black
+                )
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(
+                    text = "Mine tagasi",
+                    fontSize = 12.sp,
+                    color = Color.Black,
+                    fontFamily = nunitoRegular,
+                    textDecoration = TextDecoration.Underline
+                )
+            }
+
+            // "Kas sul on juba konto? Logi sisse."
+            Spacer(modifier = Modifier.height(8.dp))
+            val annotatedLogin = buildAnnotatedString {
+                withStyle(SpanStyle(
+                    color = Color.Black,
+                    fontSize = 13.sp,
+                    fontFamily = nunitoRegular
+                )) {
+                    append("Kas sul on juba konto? ")
+                }
+                pushStringAnnotation(tag = "login", annotation = "login")
+                withStyle(SpanStyle(
+                    color = Color(0xFF62A87C),
+                    fontSize = 13.sp,
+                    fontFamily = nunitoRegular,
+                    textDecoration = TextDecoration.Underline
+                )) {
+                    append("Logi sisse.")
+                }
+                pop()
+            }
+            Text(
+                text = annotatedLogin,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onNavigateToLogin() }
+            )
 
             // "või" text
             Spacer(modifier = Modifier.height(16.dp))

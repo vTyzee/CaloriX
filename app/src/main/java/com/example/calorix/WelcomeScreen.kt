@@ -13,212 +13,138 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.Canvas
-import com.example.calorix.R
 
 @Composable
 fun WelcomeScreen(
     onLoginClick: () -> Unit = {},
     onSignUpClick: () -> Unit = {}
 ) {
-
-    val nunito = FontFamily(
-
-        Font(R.font.nunito_regular)
-
-    )
+    val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
+    val nunitoSemiBold = FontFamily(Font(R.font.nunito_semibold))
 
     Box(
-
         modifier = Modifier
-
             .fillMaxSize()
-
             .background(Color(0xFFE6E8E6))
-
     ) {
-
-        // Контент
-
-        Column(
-
+        // Top banner wave
+        Image(
+            painter = painterResource(id = R.drawable.ic_top_wave),
+            contentDescription = null,
             modifier = Modifier
+                .fillMaxWidth()
+                .scale(2.75f)
+                .align(Alignment.TopCenter),
+            contentScale = ContentScale.FillWidth
+        )
 
+        // Bottom wave
+        Image(
+            painter = painterResource(id = R.drawable.ic_wave_bottom),
+            contentDescription = null,
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .offset(x = 40.dp, y = 10.dp)
+                .width(3000.dp)
+                .scale(1.5f)
+                .wrapContentWidth(unbounded = true),  // Adjusting slightly if needed, helps avoid gaps
+            contentScale = ContentScale.FillWidth
+
+        )
+
+        // Center Content
+        Column(
+            modifier = Modifier
                 .fillMaxSize()
-
-                .padding(top = 120.dp),
-
+                .padding(top = 140.dp), // Adjust padding based on visual center
             horizontalAlignment = Alignment.CenterHorizontally
-
         ) {
-
             Image(
-
                 painter = painterResource(id = R.drawable.ic_logo),
-
-                contentDescription = null,
-
-                modifier = Modifier.size(155.dp)
-
+                contentDescription = "CaloriX Logo",
+                modifier = Modifier
+                    .size(125.dp) // layout остаётся прежним
+                    .graphicsLayer {
+                        scaleX = 1.25f
+                        scaleY = 1.25f
+                    }
+                    .align(Alignment.CenterHorizontally)
+                    .wrapContentWidth(unbounded = true)
+                    .offset(y = 28.dp)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             Text(
-
                 text = "CaloriX",
-
-                fontSize = 32.sp,
-
+                fontSize = 36.sp,
                 color = Color(0xFF548C64),
-
-                fontFamily = nunito
-
+                fontFamily = nunitoMedium
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            // Spacing to sub-header
+            Spacer(modifier = Modifier.height(12.dp))
 
             Text(
-
                 text = "Kontrolli oma toitumist hõlpsalt",
-
-                fontSize = 14.sp,
-
+                fontSize = 16.sp, 
                 color = Color(0xFF487956),
-
-                fontFamily = nunito
-
+                fontFamily = nunitoMedium
             )
 
-            Spacer(modifier = Modifier.height(30.dp))
+            // Spacing to buttons
+            Spacer(modifier = Modifier.height(60.dp))
 
-            Row {
 
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                // Logi sisse button
                 Button(
-
                     onClick = { onLoginClick() },
-
                     modifier = Modifier.size(140.dp, 50.dp),
-
                     colors = ButtonDefaults.buttonColors(
-
                         containerColor = Color(0xFF62A87C),
-
                         contentColor = Color(0xFFE6E8E6)
-
                     ),
-
-                    shape = RoundedCornerShape(25.dp)
-
+                    shape = RoundedCornerShape(16.dp)
                 ) {
-
-                    Text("Log In", fontFamily = nunito)
-
+                    Text(
+                        text = "Logi sisse",
+                        fontSize = 18.sp,
+                        fontFamily = nunitoSemiBold
+                    )
                 }
 
                 Spacer(modifier = Modifier.width(10.dp))
 
+                // Register button
                 Box(
-
                     modifier = Modifier
-
                         .size(140.dp, 50.dp)
-
-                        .clip(RoundedCornerShape(25.dp))
-
-                        .border(2.dp, Color(0xFF62A87C), RoundedCornerShape(25.dp))
-
+                        .clip(RoundedCornerShape(16.dp))
+                        .border(1.5.dp, Color(0xFF62A87C), RoundedCornerShape(16.dp))
                         .clickable { onSignUpClick() },
-
                     contentAlignment = Alignment.Center
-
                 ) {
-
                     Text(
-
-                        text = "Sign Up",
-
+                        text = "Register",
+                        fontSize = 18.sp,
                         color = Color(0xFF62A87C),
-
-                        fontFamily = nunito
-
+                        fontFamily = nunitoSemiBold
                     )
-
                 }
-
             }
-
         }
-
-        // 🌊 Волны
-
-        Waves(
-
-            modifier = Modifier.align(Alignment.BottomCenter)
-
-        )
-
-    }
-
-}
-
-@Composable
-fun Waves(modifier: Modifier = Modifier) {
-    Canvas(
-        modifier = modifier
-            .fillMaxWidth()
-            .height(350.dp)
-    ) {
-        val w = size.width
-        val h = size.height
-
-        // 1. Back layer (lightest)
-        val backWave = Path().apply {
-            moveTo(0f, h * 0.8f)
-            cubicTo(
-                w * 0.3f, h * 0.75f,
-                w * 0.7f, h * 0.3f,
-                w, h * 0.45f
-            )
-            lineTo(w, h)
-            lineTo(0f, h)
-            close()
-        }
-        drawPath(backWave, Color(0xFF5F8A68))
-
-        // 2. Middle layer
-        val middleWave = Path().apply {
-            moveTo(0f, h * 0.9f)
-            cubicTo(
-                w * 0.4f, h * 0.85f,
-                w * 0.7f, h * 0.5f,
-                w, h * 0.65f
-            )
-            lineTo(w, h)
-            lineTo(0f, h)
-            close()
-        }
-        drawPath(middleWave, Color(0xFF4D7757))
-
-        // 3. Front layer (darkest)
-        val frontWave = Path().apply {
-            moveTo(0f, h)
-            cubicTo(
-                w * 0.35f, h * 0.95f,
-                w * 0.75f, h * 0.65f,
-                w, h * 0.78f
-            )
-            lineTo(w, h)
-            lineTo(0f, h)
-            close()
-        }
-        drawPath(frontWave, Color(0xFF43664B))
     }
 }
