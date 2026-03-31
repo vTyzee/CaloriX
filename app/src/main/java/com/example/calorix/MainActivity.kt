@@ -37,6 +37,11 @@ class MainActivity : ComponentActivity() {
                         },
                         onNavigateToForgotPassword = {
                             navController.navigate("forgot_password")
+                        },
+                        onLogicSuccess = {
+                            navController.navigate("home") {
+                                popUpTo("welcome") { inclusive = true }
+                            }
                         }
                     )
                 }
@@ -49,6 +54,11 @@ class MainActivity : ComponentActivity() {
                         },
                         onNavigateBack = {
                             navController.popBackStack()
+                        },
+                        onRegistrationSuccess = {
+                            navController.navigate("home") {
+                                popUpTo("welcome") { inclusive = true }
+                            }
                         }
                     )
                 }
@@ -70,6 +80,9 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     )
+                }
+                composable("home") {
+                    HomeScreen()
                 }
             }
         }

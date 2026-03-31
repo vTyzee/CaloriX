@@ -35,7 +35,8 @@ import androidx.compose.ui.unit.sp
 fun LoginScreen(
     onNavigateBack: () -> Unit = {},
     onNavigateToRegister: () -> Unit = {},
-    onNavigateToForgotPassword: () -> Unit = {}
+    onNavigateToForgotPassword: () -> Unit = {},
+    onLogicSuccess: () -> Unit = {}
 ) {
     val nunitoRegular = FontFamily(Font(R.font.nunito_regular))
     val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
@@ -218,7 +219,7 @@ fun LoginScreen(
             // "Logi sisse" button
             Spacer(modifier = Modifier.height(24.dp))
             Button(
-                onClick = { /* TODO: Handle login */ },
+                onClick = { onLogicSuccess() },
                 modifier = Modifier
                     .size(150.dp, 54.dp)
                     .align(Alignment.CenterHorizontally),

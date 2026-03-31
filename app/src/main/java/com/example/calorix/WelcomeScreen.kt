@@ -114,7 +114,7 @@ fun WelcomeScreen(
                     onClick = { onLoginClick() },
                     modifier = Modifier.size(140.dp, 50.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFF62A87C),
+                        containerColor = Color(0xFF548C64),
                         contentColor = Color(0xFFE6E8E6)
                     ),
                     shape = RoundedCornerShape(16.dp)
@@ -133,14 +133,14 @@ fun WelcomeScreen(
                     modifier = Modifier
                         .size(140.dp, 50.dp)
                         .clip(RoundedCornerShape(16.dp))
-                        .border(1.5.dp, Color(0xFF62A87C), RoundedCornerShape(16.dp))
+                        .border(1.5.dp, Color(0xFF548C64), RoundedCornerShape(16.dp))
                         .clickable { onSignUpClick() },
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
                         text = "Register",
                         fontSize = 18.sp,
-                        color = Color(0xFF62A87C),
+                        color = Color(0xFF548C64),
                         fontFamily = nunitoSemiBold
                     )
                 }

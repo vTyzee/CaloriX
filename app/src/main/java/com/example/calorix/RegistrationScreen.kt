@@ -35,7 +35,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun RegistrationScreen(
     onNavigateToLogin: () -> Unit = {},
-    onNavigateBack: () -> Unit = {}
+    onNavigateBack: () -> Unit = {},
+    onRegistrationSuccess: () -> Unit = {}
 ) {
     val nunitoRegular = FontFamily(Font(R.font.nunito_regular))
     val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
@@ -307,7 +308,7 @@ fun RegistrationScreen(
             // Register button
             Spacer(modifier = Modifier.height(20.dp))
             Button(
-                onClick = { /* TODO: Handle registration */ },
+                onClick = { onRegistrationSuccess() },
                 modifier = Modifier
                     .size(150.dp, 54.dp)
                     .align(Alignment.CenterHorizontally),
