@@ -12,8 +12,6 @@ Rakendus aitab kasutajal teha teadlikumaid valikuid ning toetab tervislikku eluv
 ## Projekti lühitutvustus
 CaloriX võimaldab kasutajal lisada päeva jooksul söödud toite, jälgida tarbitud kaloreid ning saada ülevaadet oma toitumisest. 
 Lisaks saab kasutaja vaadata erinevate toiduainete toiteväärtust ning seada isiklikke eesmärke, näiteks kaalulangus, kaalutõus või tasakaalustatud toitumine.
-## Projekti disain ja WelcomePage niimoodi välja näevad.
-<img width="343" height="670" alt="image" src="https://github.com/user-attachments/assets/6e0e57ff-1511-4f94-990f-8dac0c55ed27" />
 
 ## Projekti disain Figmas
 - Figma link - https://www.figma.com/design/c30RwLXJQkBz8D0KKsF4ZP/Untitled?node-id=0-1&t=HCDBqiiKo8FXUGPC-1
