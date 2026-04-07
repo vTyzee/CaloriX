@@ -101,9 +101,9 @@ caloriX/
 └── app/src/androidTest/          # UI (kasutajaliidese) instrumentaaltestid
     └── tests.kt                  # Automaattestide koodifail
 
-<img width="300" height="822" alt="image" src="https://github.com/user-attachments/assets/37e5086c-75db-47d2-8117-8a2fcd634f54" />
-
 ```
+<img width="300" height="822" alt="image" src="https://github.com/user-attachments/assets/5df7c045-9a50-4914-bef9-fc14f3686ea7" />
+
 
 
 
