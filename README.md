@@ -71,5 +71,17 @@ Edaspidi soovime lisada:
 - **UI:** Jetpack Compose
 - **Andmed:** Firebase
 
+## Pildid
+<img width="360" height="700" alt="UusParool" src="https://github.com/user-attachments/assets/e966fec1-7271-4818-945f-f84c94b7307a" />
+<img width="360" height="700" alt="UnustasidParooli" src="https://github.com/user-attachments/assets/bdb183a5-1dc9-4ace-a1a5-286c09fa2bba" />
+<img width="360" height="700" alt="Register" src="https://github.com/user-attachments/assets/f2a5fee9-58be-4981-856e-0932c4754bdf" />
+<img width="360" height="700" alt="Login" src="https://github.com/user-attachments/assets/a86b6872-3395-4831-8be2-0752cc4a87bd" />
+<img width="360" height="700" alt="Welcome" src="https://github.com/user-attachments/assets/7d86a85a-c95e-485f-9dc4-dc9aec16d527" />
+
+
+
+
+
+
 
 
