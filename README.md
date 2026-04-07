@@ -33,9 +33,9 @@ Rakendus on mõeldud inimestele, kes soovivad:
 - saavutada tervise- või kehakaaluga seotud eesmärke
 
 ## Grupiliikmed
-- Vitali Kolesnikov
-- Aleksandr Gritsenko
-- Emil Munassypov
+- [Vitali Kolesnikov](https://github.com/Vitali-Kol)
+- [Aleksandr Gritsenko](https://github.com/Terabyte23)
+- [Emil Munassypov](https://github.com/vTyzee)
 
 ## Kasutatav arendusmudel
 Meie projektis kasutame agiilset arendusmudelit, täpsemalt Kanbani-metoodikat.
