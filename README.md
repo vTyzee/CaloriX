@@ -76,6 +76,8 @@ Edaspidi soovime lisada:
 <img width="360" height="700" alt="Login" src="https://github.com/user-attachments/assets/a86b6872-3395-4831-8be2-0752cc4a87bd" />
 <img width="360" height="700" alt="Welcome" src="https://github.com/user-attachments/assets/7d86a85a-c95e-485f-9dc4-dc9aec16d527" />
 
+
+## Projekti struktuur
 ```
 caloriX/
 ├── app/src/main/java/com/example/calorix/
