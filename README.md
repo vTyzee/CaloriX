@@ -76,6 +76,30 @@ Edaspidi soovime lisada:
 <img width="360" height="700" alt="Login" src="https://github.com/user-attachments/assets/a86b6872-3395-4831-8be2-0752cc4a87bd" />
 <img width="360" height="700" alt="Welcome" src="https://github.com/user-attachments/assets/7d86a85a-c95e-485f-9dc4-dc9aec16d527" />
 
+```
+caloriX/
+├── app/src/main/java/com/example/calorix/
+│   ├── ui/                       # Rakenduse värvid, tüpograafia ja teema
+│   │   └── theme/
+│   │       ├── Color.kt
+│   │       ├── Theme.kt 
+│   │       └── Typography.kt
+│   │
+│   ├── MainActivity.kt           # Rakenduse sisenemispunkt ja navigeerimiskeskus
+│   │
+│   ├── WelcomeScreen.kt          # Avaleht (tervitusekraan)
+│   ├── LoginScreen.kt            # Kasutaja sisselogimise ekraan
+│   ├── RegistrationScreen.kt     # Uue konto loomise ekraan
+│   ├── ForgotPasswordScreen.kt   # Unustatud parooli lähtestamise päring
+│   ├── UusParoolScreen.kt        # Uue turvalise parooli määramine
+│   │
+│   └── HomeScreen.kt             # Peamine töölaud (dashboard) pärast sisselogimist
+│
+├── app/src/main/res/             # Vektorgraafika (SVG/XML pildid), fondid (Nunito)
+└── app/src/androidTest/          # UI (kasutajaliidese) instrumentaaltestid
+    └── tests.kt                  # Automaattestide koodifail
+```
+
 
 
 
