@@ -33,7 +33,8 @@ import androidx.compose.ui.unit.sp
 fun HomeScreen(
     onNavigateToAdd: () -> Unit = {},
     onNavigateToHistory: () -> Unit = {},
-    onNavigateToProfile: () -> Unit = {}
+    onNavigateToProfile: () -> Unit = {},
+    onNavigateToFoodList: () -> Unit = {}
 ) {
     val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
     val nunitoRegular = FontFamily(Font(R.font.nunito_regular))
@@ -189,7 +190,7 @@ fun HomeScreen(
                 // Tooted Button
                 Spacer(modifier = Modifier.height(24.dp))
                 Button(
-                    onClick = { /* Handle Tooted Action */ },
+                    onClick = onNavigateToFoodList,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(60.dp),

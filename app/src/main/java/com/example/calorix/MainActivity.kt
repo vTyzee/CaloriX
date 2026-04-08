@@ -82,7 +82,139 @@ class MainActivity : ComponentActivity() {
                     )
                 }
                 composable("home") {
-                    HomeScreen()
+                    HomeScreen(
+                        onNavigateToAdd = {
+                            navController.navigate("add_food")
+                        },
+                        onNavigateToFoodList = {
+                            navController.navigate("food_list")
+                        },
+                        onNavigateToProfile = {
+                            navController.navigate("profile")
+                        },
+                        onNavigateToHistory = {
+                            navController.navigate("history")
+                        }
+                    )
+                }
+                composable("add_food") {
+                    AddFoodScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        },
+                        onNavigateToHome = {
+                            navController.navigate("home") {
+                                popUpTo("home") { inclusive = true }
+                            }
+                        },
+                        onNavigateToProfile = {
+                            navController.navigate("profile")
+                        },
+                        onNavigateToHistory = {
+                            navController.navigate("history")
+                        }
+                    )
+                }
+                composable("food_list") {
+                    FoodListScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        },
+                        onNavigateToHome = {
+                            navController.navigate("home") {
+                                popUpTo("home") { inclusive = true }
+                            }
+                        },
+                        onNavigateToAdd = {
+                            navController.navigate("add_food")
+                        },
+                        onNavigateToProfile = {
+                            navController.navigate("profile")
+                        },
+                        onNavigateToHistory = {
+                            navController.navigate("history")
+                        },
+                        onNavigateToRecommendation = {
+                            navController.navigate("recommendation")
+                        }
+                    )
+                }
+                composable("profile") {
+                    ProfileScreen(
+                        onNavigateToHome = {
+                            navController.navigate("home") {
+                                popUpTo("home") { inclusive = true }
+                            }
+                        },
+                        onNavigateToAdd = {
+                            navController.navigate("add_food")
+                        },
+                        onNavigateToHistory = {
+                            navController.navigate("history")
+                        },
+                        onNavigateToEditProfile = {
+                            navController.navigate("edit_profile")
+                        },
+                        onLogout = {
+                            navController.navigate("welcome") {
+                                popUpTo(0) { inclusive = true } // Clear all history
+                            }
+                        }
+                    )
+                }
+                composable("edit_profile") {
+                    EditProfileScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        },
+                        onNavigateToHome = {
+                            navController.navigate("home") {
+                                popUpTo("home") { inclusive = true }
+                            }
+                        },
+                        onNavigateToAdd = {
+                            navController.navigate("add_food")
+                        },
+                        onNavigateToHistory = {
+                            navController.navigate("history")
+                        },
+                        onNavigateToProfile = {
+                            navController.navigate("profile")
+                        }
+                    )
+                }
+                composable("history") {
+                    HistoryScreen(
+                        onNavigateToHome = {
+                            navController.navigate("home") {
+                                popUpTo("home") { inclusive = true }
+                            }
+                        },
+                        onNavigateToAdd = {
+                            navController.navigate("add_food")
+                        },
+                        onNavigateToProfile = {
+                            navController.navigate("profile")
+                        }
+                    )
+                }
+                composable("recommendation") {
+                    RecommendationScreen(
+                        onNavigateToHome = {
+                            navController.navigate("home") {
+                                popUpTo("home") { inclusive = true }
+                            }
+                        },
+                        onNavigateToAdd = {
+                            navController.navigate("add_food")
+                        },
+                        onNavigateToHistory = {
+                            navController.navigate("history")
+                        },
+                        onNavigateToProfile = {
+                            navController.navigate("profile")
+                        }
+                    )
                 }
             }
         }
