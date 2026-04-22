@@ -11,7 +11,7 @@ Järgige neid samme, et seadistada ja käivitada CaloriX projekt oma arvutis.
 3. Pakige alla laetud arhiiv lahti sobivasse kausta oma arvutis.
 
 ### 2. Ettevalmistus
-* Paigaldage **Android Studio** (versioon Ladybug või uuem).
+* Paigaldage **Android Studio**.
 * Veenduge, et teil on installitud **JDK 17**.
 
 ### 3. Firebase'i seadistamine ⚠️ **Oluline**
@@ -25,7 +25,7 @@ Ilma selle sammuta projekt ei kompileeru ega käivitu korrektselt:
 1. Avage **Android Studio**.
 2. Valige **"Open"** ja navigeerige kaustani, kuhu arhiivi lahti pakkisite.
 3. Oodake, kuni projekt laetakse ja **Gradle Sync** on lõppenud.
-4. Ühendage oma Android-seade (USB-silumisrežiimis) või käivitage virtuaalne emulaator.
+* **Virtuaalne emulaator:** Avage paremal üleval nurgas asuv **Device Manager**, valige oma loodud virtuaalne seade ja vajutage **Play** (Launch) nuppu. Kui seadet pole, looge uus, vajutades "Create Device".
 5. Vajutage ülemisel paneelil ikooni **Run** (roheline kolmnurk).
 
 
