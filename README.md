@@ -1,6 +1,33 @@
 # CaloriX
 <img width="122" height="124" alt="image 10" src="https://github.com/user-attachments/assets/175fdf1c-cac5-4b9a-9709-8d2ea8c11931" />
 
+# Juhised käivitamiseks
+
+Järgige neid samme, et seadistada ja käivitada CaloriX projekt oma arvutis.
+
+### 1. Koodi hankimine
+1. Vajutage repositooriumi lehel rohelist nuppu **"Code"**.
+2. Valige **"Download ZIP"**.
+3. Pakige alla laetud arhiiv lahti sobivasse kausta oma arvutis.
+
+### 2. Ettevalmistus
+* Paigaldage **Android Studio** (versioon Ladybug või uuem).
+* Veenduge, et teil on installitud **JDK 17**.
+
+### 3. Firebase'i seadistamine ⚠️ **Oluline**
+Ilma selle sammuta projekt ei kompileeru ega käivitu korrektselt:
+1. Looge uus projekt [Firebase Console'is](https://console.firebase.google.com/).
+2. Lisage projekti Android-rakendus paketinimega (Package Name): `ee.vtyzee.calorix`.
+3. Laadige alla konfigureerimisfail **`google-services.json`**.
+4. Kopeerige see fail projekti kausta järgmisel teel: `CaloriX-main/app/`.
+
+### 4. Käivitamine
+1. Avage **Android Studio**.
+2. Valige **"Open"** ja navigeerige kaustani, kuhu arhiivi lahti pakkisite.
+3. Oodake, kuni projekt laetakse ja **Gradle Sync** on lõppenud.
+4. Ühendage oma Android-seade (USB-silumisrežiimis) või käivitage virtuaalne emulaator.
+5. Vajutage ülemisel paneelil ikooni **Run** (roheline kolmnurk).
+
 
 ## Projekti nimi
 CaloriX – kalorite ja toitumise jälgimise mobiilirakendus
