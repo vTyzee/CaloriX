@@ -59,10 +59,11 @@ Rakendus on mõeldud inimestele, kes soovivad:
 - parandada oma toitumisharjumusi
 - saavutada tervise- või kehakaaluga seotud eesmärke
 
-## Grupiliikmed
-- [Vitali Kolesnikov](https://github.com/Vitali-Kol)
-- [Aleksandr Gritsenko](https://github.com/Terabyte23)
-- [Emil Munassypov](https://github.com/vTyzee)
+## Grupiliikmed ja rollid
+
+* **[Vitali Kolesnikov](https://github.com/Vitali-Kol)** – **Peamine arendus ja back-end.** Tegeles rakenduse loogika kirjutamisega Android Studios, andmebaaside ühendamise ja süsteemi tehnilise teostusega.
+* **[Aleksandr Gritsenko](https://github.com/Terabyte23)** – **Disain ja UI/UX.** Tegeles rakenduse visuaalse poole disainimisega Figmas ja kasutajaliidese planeerimisega.
+* **[Emil Munassypov](https://github.com/vTyzee)** – **GitHubi haldus ja projektijuhtimine.** Lõi projekti hoidla (repository), haldas koodi versioone ja hoidis kogu arendusprotsessi kontrolli all.
 
 ## Kasutatav arendusmudel
 Meie projektis kasutame agiilset arendusmudelit, täpsemalt Kanbani-metoodikat.
