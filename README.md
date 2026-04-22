@@ -25,7 +25,7 @@ Ilma selle sammuta projekt ei kompileeru ega käivitu korrektselt:
 1. Avage **Android Studio**.
 2. Valige **"Open"** ja navigeerige kaustani, kuhu arhiivi lahti pakkisite.
 3. Oodake, kuni projekt laetakse ja **Gradle Sync** on lõppenud.
-* **Virtuaalne emulaator:** Avage paremal üleval nurgas asuv **Device Manager**, valige oma loodud virtuaalne seade ja vajutage **Play** (Launch) nuppu. Kui seadet pole, looge uus, vajutades "Create Device".
+4. **Virtuaalne emulaator:** Avage paremal üleval nurgas asuv **Device Manager**, valige oma loodud virtuaalne seade ja vajutage **Play** (Launch) nuppu. Kui seadet pole, looge uus, vajutades "Create Device".
 5. Vajutage ülemisel paneelil ikooni **Run** (roheline kolmnurk).
 
 
