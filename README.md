@@ -1,6 +1,10 @@
 # CaloriX
 <img width="122" height="124" alt="image 10" src="https://github.com/user-attachments/assets/175fdf1c-cac5-4b9a-9709-8d2ea8c11931" />
 
+# Valime kihilise arhitektuuri MVVM (Model-View-ViewModel) mustri abil.
+<img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/2dc2b875-42ce-40f8-9a6c-c89066fa0ca6" />
+
+
 ### 1. Persoonad
 
 | Karakteristik | Persona 1: Joonas (Üliõpilane) | Persona 2: Eeva (Treenija) |
