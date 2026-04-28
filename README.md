@@ -6,6 +6,7 @@
 | Karakteristik | Persona 1: Joonas (Üliõpilane) | Persona 2: Eeva (Treenija) |
 | :--- | :--- | :--- |
 | **Vanus** | 21 aastat | 28 aastat |
+| **Elustiil** | **Aktiivne, kuid kiire.** Käib loengutes, töötab poole kohaga ja sööb sageli väljas või teel olles. | **Rutiinne ja tervislik.** Istuv kontoritöö, kuid käib 3-4 korda nädalas jõusaalis ja planeerib toidukordi ette. |
 | **Eesmärk** | Kaalu langetamine ilma stressita. | Lihasmassi kasvatamine ja makrode jälgimine. |
 | **Vajadus** | Kiire ja lihtne toidu lisamine loengute vahel. | Detailne statistika valkude ja süsivesikute kohta. |
 | **Probleem** | Unustab sageli vahepalasid kirja panna. | Tahab näha edusamme pikas perspektiivis. |
