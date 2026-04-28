@@ -1,6 +1,35 @@
 # CaloriX
 <img width="122" height="124" alt="image 10" src="https://github.com/user-attachments/assets/175fdf1c-cac5-4b9a-9709-8d2ea8c11931" />
 
+### 1. Persoonad
+
+| Karakteristik | Persona 1: Joonas (Üliõpilane) | Persona 2: Eeva (Treenija) |
+| :--- | :--- | :--- |
+| **Vanus** | 21 aastat | 28 aastat |
+| **Eesmärk** | Kaalu langetamine ilma stressita. | Lihasmassi kasvatamine ja makrode jälgimine. |
+| **Vajadus** | Kiire ja lihtne toidu lisamine loengute vahel. | Detailne statistika valkude ja süsivesikute kohta. |
+| **Probleem** | Unustab sageli vahepalasid kirja panna. | Tahab näha edusamme pikas perspektiivis. |
+
+---
+
+### 2. Kasutusstsenaariumid
+
+#### Stsenaarium A: Kiire sissekanne (Joonas)
+Joonas on loengute vahelisel pausil ja ostab kohvikust kiirtoidu. Tal on vaid paar minutit aega. Ta avab CaloriX äpi, sisestab otsingusse toidu nime ja lisab selle ühe klikiga oma päeva logisse. Äpp näitab talle kohe, kui palju kaloreid on tal veel päeva lõpuni jäänud, mis aitab tal järgmisi söögikordi paremini planeerida.
+
+#### Stsenaarium B: Toitainete tasakaalu analüüs (Eeva)
+Eeva on lõpetanud õhtuse treeningu ja soovib teada, kas ta on tarbinud piisavalt valku. Ta avab rakenduses statistika vaate ja näeb graafikut, mis jaotab päeva jooksul söödud toidu valkudeks, rasvadeks ja süsivesikuteks. Ta märkab, et valgu eesmärk on peaaegu täis ja otsustab õhtusöögiks valmistada midagi kergemat, et püsida oma seatud plaanis.
+
+---
+
+### 3. Kasutajalood (User Stories)
+
+* **Toidu otsing:** Kasutajana soovin otsida toiduaineid andmebaasist, et ma ei peaks kaloreid ja toitaineid käsitsi sisestama.
+* **Päevane ülevaade:** Kasutajana soovin näha visuaalset progressiriba oma päevasest kalorieesmärgist, et saaksin kiiresti hinnata oma hetkeseisu.
+* **Makrotoitainete jaotus:** Kasutajana soovin näha valkude, rasvade ja süsivesikute jaotust, et tagada oma toitumise tasakaalustatus.
+* **Ajaloo logi:** Kasutajana soovin näha oma eelmiste päevade logisid, et analüüsida oma toitumisharjumusi ja märgata mustreid.
+* **Eesmärkide seadmine:** Kasutajana soovin määrata oma individuaalse kaloraaži ja makrode eesmärgid vastavalt oma füüsilisele aktiivsusele.
+
 # Juhised käivitamiseks
 
 Järgige neid samme, et seadistada ja käivitada CaloriX projekt oma arvutis.
