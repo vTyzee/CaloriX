@@ -3,7 +3,7 @@
 
 # Valime kihilise arhitektuuri MVVM (Model-View-ViewModel) mustri abil.
 <img width="574" height="728" alt="image" src="https://github.com/user-attachments/assets/1ea5e7c0-6f06-453c-9cb4-d1f26207db63" />
-# Kuidas see kõik koos toimib (andmevoog):
+Kuidas see kõik koos toimib (andmevoog):
 
 Kasutaja sisestab toidu vaatesse (View).
 
