@@ -1,6 +1,26 @@
 # CaloriX
 <img width="122" height="124" alt="image 10" src="https://github.com/user-attachments/assets/175fdf1c-cac5-4b9a-9709-8d2ea8c11931" />
 
+# CaloriX-i nõuded
+
+## Funktsionaalsed nõuded
+1. **Kalorite arvutamine:** Arvutab automaatselt päevased kaloripiirangud kasutaja kaalu, pikkuse ja vanuse põhjal.
+
+2. **Toidupäevik:** Kasutajatel peab olema võimalik otsida toite ja lisada need oma igapäevasesse tarbimisloendisse.
+
+3. **Makrode jälgimine:** Kuvab põhiekraanil valkude, rasvade ja süsivesikute koguhulga.
+
+4. **Toidukategooriad:** Toitude jaotus rühmadesse: hommikusöök, lõunasöök, õhtusöök ja vahepalad.
+
+5. **Edugraafik:** Visualiseerib kaalumuutuste ajalugu viimase 30 päeva jooksul.
+
+## Mittefunktsionaalsed nõuded
+1. **Jõudlus:** Rakenduse põhiekraan peab laadima vähem kui 2 sekundiga.
+
+2. **Usaldusväärsus:** Kõik andmed peavad olema salvestatud lokaalselt (Room/SQLite) ja neile peab olema juurdepääs ilma internetiühenduseta.
+
+3. **Ühilduvus:** Rakendus peab olema täielikult funktsionaalne Android 8.0 (API tase 26) ja uuemate versioonide puhul.
+
 # Valime kihilise arhitektuuri MVVM (Model-View-ViewModel) mustri abil.
 <img width="574" height="728" alt="image" src="https://github.com/user-attachments/assets/1ea5e7c0-6f06-453c-9cb4-d1f26207db63" />
 Kuidas see kõik koos toimib (andmevoog):
