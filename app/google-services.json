@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "703019106598",
+    "project_id": "calorix-toite",
+    "storage_bucket": "calorix-toite.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703019106598:android:d3e07f987a4490a14e01e7",
+        "android_client_info": {
+          "package_name": "com.example.calorix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0RfA4PeVNqoVlwjFKZy7xZL4NYGqvRwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

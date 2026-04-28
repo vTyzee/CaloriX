@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+<<<<<<< HEAD
+=======
+    id("com.google.gms.google-services")
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 }
 
 android {
@@ -50,6 +54,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.compose)
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.34.0")
+<<<<<<< HEAD
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -57,4 +62,13 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+=======
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
+    implementation(libs.kotlinx.coroutines.play.services)
+
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 }

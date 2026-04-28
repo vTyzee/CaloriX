@@ -56,6 +56,7 @@ fun AddFoodScreen(
     var selectedMeal by remember { mutableStateOf("Hommik") }
     val mealOptions = listOf("Hommik", "Lõuna", "Õhtu", "Vahepala")
 
+<<<<<<< HEAD
     val popularFoods = when (selectedMeal) {
         "Hommik" -> listOf(
             "Kanarind" to "165 kcal - 100 g",
@@ -94,6 +95,26 @@ fun AddFoodScreen(
             "Hummus" to "166 kcal - 100 g"
         )
         else -> emptyList()
+=======
+    var searchQuery by remember { mutableStateOf("") }
+    var searchResults by remember { mutableStateOf<List<FoodProduct>>(emptyList()) }
+    var isLoading by remember { mutableStateOf(false) }
+
+    // Seed database on first launch and load initial products
+    LaunchedEffect(Unit) {
+        FirebaseManager.seedDatabaseIfEmpty()
+    }
+
+    // Search logic with debounce or simple trigger
+    LaunchedEffect(searchQuery) {
+        if (searchQuery.isNotEmpty()) {
+            isLoading = true
+            searchResults = FirebaseManager.searchProducts(searchQuery)
+            isLoading = false
+        } else {
+            searchResults = emptyList()
+        }
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
     }
 
     Scaffold(
@@ -222,6 +243,7 @@ fun AddFoodScreen(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 // Search Bar
+<<<<<<< HEAD
                 Text(
                     text = "Otsing",
                     fontFamily = nunitoRegular,
@@ -233,6 +255,33 @@ fun AddFoodScreen(
                 
                 var searchQuery by remember { mutableStateOf("") }
                 
+=======
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = "Otsing",
+                        fontFamily = nunitoRegular,
+                        fontSize = 20.sp,
+                        color = Color.Black,
+                        modifier = Modifier.padding(start = 4.dp)
+                    )
+                    
+                    // Visual Search Button
+                    IconButton(onClick = { /* TODO: Implement Barcode Scanner */ }) {
+                        Icon(
+                            imageVector = Icons.Default.Add, // Using Add icon as a placeholder since ic_camera is missing
+                            contentDescription = "Visual Search",
+                            tint = Color(0xFF549D5C),
+                            modifier = Modifier.size(28.dp)
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.height(10.dp))
+                
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                 OutlinedTextField(
                     value = searchQuery,
                     onValueChange = { searchQuery = it },
@@ -260,9 +309,15 @@ fun AddFoodScreen(
 
                 Spacer(modifier = Modifier.height(28.dp))
 
+<<<<<<< HEAD
                 // Popular Section
                 Text(
                     text = "Populaarsed",
+=======
+                // Results Section
+                Text(
+                    text = if (searchQuery.isEmpty()) "Populaarsed" else "Tulemused",
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                     fontFamily = nunitoRegular,
                     fontSize = 20.sp,
                     color = Color.Black,
@@ -270,6 +325,7 @@ fun AddFoodScreen(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
 
+<<<<<<< HEAD
                 popularFoods.forEach { (name, info) ->
                     Box(
                         modifier = Modifier
@@ -316,6 +372,71 @@ fun AddFoodScreen(
                                     tint = Color.Black,
                                     modifier = Modifier.size(20.dp)
                                 )
+=======
+                if (isLoading) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.align(Alignment.CenterHorizontally),
+                        color = Color(0xFF549D5C)
+                    )
+                } else if (searchResults.isEmpty() && searchQuery.isNotEmpty()) {
+                    Text(
+                        text = "Tooteid ei leitud",
+                        modifier = Modifier.padding(16.dp),
+                        fontFamily = nunitoRegular,
+                        color = Color.Gray
+                    )
+                } else {
+                    // Show search results or some defaults if empty
+                    val displayList = if (searchResults.isNotEmpty()) searchResults else emptyList()
+                    
+                    displayList.forEach { product ->
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 14.dp)
+                                .height(70.dp)
+                                .background(Color.White, RoundedCornerShape(14.dp))
+                                .border(0.5.dp, Color(0xFF9C9C9C), RoundedCornerShape(14.dp))
+                                .padding(horizontal = 20.dp),
+                            contentAlignment = Alignment.CenterStart
+                        ) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Column(verticalArrangement = Arrangement.Center) {
+                                    Text(
+                                        text = product.name,
+                                        fontFamily = nunitoRegular,
+                                        fontSize = 16.sp,
+                                        color = Color.Black
+                                    )
+                                    Spacer(modifier = Modifier.height(2.dp))
+                                    Text(
+                                        text = "${product.calories} kcal - ${product.unit}",
+                                        fontFamily = nunitoRegular,
+                                        fontSize = 12.sp,
+                                        color = Color.Gray
+                                    )
+                                }
+                                
+                                Box(
+                                    modifier = Modifier
+                                        .size(32.dp)
+                                        .background(Color.White, RoundedCornerShape(12.dp))
+                                        .border(1.dp, Color.Black, RoundedCornerShape(12.dp))
+                                        .clickable { /* Add to daily log logic */ },
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Add,
+                                        contentDescription = "Add",
+                                        tint = Color.Black,
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                }
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                             }
                         }
                     }

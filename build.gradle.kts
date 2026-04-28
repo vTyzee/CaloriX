@@ -2,4 +2,8 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.compose) apply false
+<<<<<<< HEAD
+=======
+    id("com.google.gms.google-services") version "4.4.4" apply false
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 }

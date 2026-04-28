@@ -1,6 +1,11 @@
 package com.example.calorix
 
 import androidx.compose.foundation.Canvas
+<<<<<<< HEAD
+=======
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -42,8 +47,17 @@ fun LoginScreen(
     val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
     val nunitoSemiBold = FontFamily(Font(R.font.nunito_semibold))
 
+<<<<<<< HEAD
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+=======
+    val scope = rememberCoroutineScope()
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    
+    var isLoading by remember { mutableStateOf(false) }
+    var errorMessage by remember { mutableStateOf<String?>(null) }
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 
     Box(
         modifier = Modifier
@@ -104,6 +118,19 @@ fun LoginScreen(
                 modifier = Modifier.fillMaxWidth()
             )
 
+<<<<<<< HEAD
+=======
+            if (errorMessage != null) {
+                Text(
+                    text = errorMessage!!,
+                    color = Color.Red,
+                    fontSize = 12.sp,
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                    textAlign = TextAlign.Center
+                )
+            }
+
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
             // E-post section
             Spacer(modifier = Modifier.height(30.dp))
             Row(
@@ -218,6 +245,7 @@ fun LoginScreen(
 
             // "Logi sisse" button
             Spacer(modifier = Modifier.height(24.dp))
+<<<<<<< HEAD
             Button(
                 onClick = { onLogicSuccess() },
                 modifier = Modifier
@@ -234,6 +262,45 @@ fun LoginScreen(
                     fontSize = 20.sp,
                     fontFamily = nunitoSemiBold
                 )
+=======
+            if (isLoading) {
+                CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+            } else {
+                Button(
+                    onClick = {
+                        if (email.isBlank() || password.isBlank()) {
+                            errorMessage = "Palun täida kõik väljad"
+                            return@Button
+                        }
+                        
+                        isLoading = true
+                        errorMessage = null
+                        scope.launch {
+                            val success = FirebaseManager.signIn(email, password)
+                            isLoading = false
+                            if (success) {
+                                onLogicSuccess()
+                            } else {
+                                errorMessage = "Sisselogimine ebaõnnestus. Kontrolli andmeid."
+                            }
+                        }
+                    },
+                    modifier = Modifier
+                        .size(150.dp, 54.dp)
+                        .align(Alignment.CenterHorizontally),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF62A87C),
+                        contentColor = Color(0xFFE6E8E6)
+                    ),
+                    shape = RoundedCornerShape(16.dp)
+                ) {
+                    Text(
+                        text = "Logi sisse",
+                        fontSize = 20.sp,
+                        fontFamily = nunitoSemiBold
+                    )
+                }
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
             }
 
             // "Mine tagasi"

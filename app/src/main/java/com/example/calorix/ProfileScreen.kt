@@ -43,6 +43,11 @@ fun ProfileScreen(
 
     val systemUiController = rememberSystemUiController()
     val useDarkIcons = !isSystemInDarkTheme()
+<<<<<<< HEAD
+=======
+    
+    val currentUser = FirebaseManager.getCurrentUser()
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 
     DisposableEffect(systemUiController, useDarkIcons) {
         systemUiController.setSystemBarsColor(color = Color.Transparent, darkIcons = useDarkIcons)
@@ -107,9 +112,18 @@ fun ProfileScreen(
                         }
                         Spacer(modifier = Modifier.width(16.dp))
                         Column {
+<<<<<<< HEAD
                             Text("Toomas, 20", fontFamily = nunitoRegular, fontSize = 24.sp, color = Color.Black)
                             Spacer(modifier = Modifier.height(4.dp))
                             Text("Eesmärk: 2000 kcal/päev", fontFamily = nunitoRegular, fontSize = 16.sp, color = Color.Gray)
+=======
+                            val displayName = currentUser?.displayName ?: "Kasutaja"
+                            val displayEmail = currentUser?.email ?: ""
+                            Text(displayName, fontFamily = nunitoRegular, fontSize = 24.sp, color = Color.Black)
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(displayEmail, fontFamily = nunitoRegular, fontSize = 16.sp, color = Color.Gray)
+                            Text("Eesmärk: 2000 kcal/päev", fontFamily = nunitoRegular, fontSize = 14.sp, color = Color.Gray)
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                         }
                     }
                 }
@@ -151,7 +165,14 @@ fun ProfileScreen(
                 Spacer(modifier = Modifier.height(20.dp))
                 
                 Button(
+<<<<<<< HEAD
                     onClick = onLogout,
+=======
+                    onClick = {
+                        FirebaseManager.logout()
+                        onLogout()
+                    },
+>>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                     modifier = Modifier.fillMaxWidth().padding(horizontal = 40.dp).height(64.dp),
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF549D5C))
