@@ -199,7 +199,9 @@ caloriX/
 ```
 <img width="300" height="822" alt="image" src="https://github.com/user-attachments/assets/5df7c045-9a50-4914-bef9-fc14f3686ea7" />
 
-##UML diagrammid(kasutusjuhtumi diagramm, Klassi diagramm ja Tegevusdiagramm)
+
+
+### UML diagrammid(kasutusjuhtumi diagramm, Klassi diagramm ja Tegevusdiagramm)
 <img width="2604" height="954" alt="UML diagramm drawio" src="https://github.com/user-attachments/assets/26881e73-cbd5-4fd2-8618-a83a70726308" />
 
 
