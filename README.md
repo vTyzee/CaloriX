@@ -201,7 +201,7 @@ caloriX/
 
 
 
-### UML diagrammid(kasutusjuhtumi diagramm, Klassi diagramm ja Tegevusdiagramm)
+## UML diagrammid(kasutusjuhtumi diagramm, Klassi diagramm ja Tegevusdiagramm)
 <img width="2604" height="954" alt="UML diagramm drawio" src="https://github.com/user-attachments/assets/26881e73-cbd5-4fd2-8618-a83a70726308" />
 
 
