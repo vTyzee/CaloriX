@@ -12,10 +12,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-<<<<<<< HEAD
-=======
 import kotlinx.coroutines.launch
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -46,20 +43,14 @@ fun RegistrationScreen(
     val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
     val nunitoSemiBold = FontFamily(Font(R.font.nunito_semibold))
 
-<<<<<<< HEAD
-=======
     val scope = rememberCoroutineScope()
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
-<<<<<<< HEAD
-=======
     
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 
     Box(
         modifier = Modifier
@@ -84,22 +75,14 @@ fun RegistrationScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 10.dp)
         ) {
-<<<<<<< HEAD
-            // Header: Logo, CaloriX (perfectly centered)
-=======
             // Header: Logo, CaloriX
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
             Spacer(modifier = Modifier.height(60.dp))
 
             Image(
                 painter = painterResource(id = R.drawable.ic_logo),
                 contentDescription = "CaloriX Logo",
                 modifier = Modifier
-<<<<<<< HEAD
-                    .size(125.dp) // layout остаётся прежним
-=======
                     .size(125.dp)
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                     .graphicsLayer {
                         scaleX = 1.25f
                         scaleY = 1.25f
@@ -130,8 +113,6 @@ fun RegistrationScreen(
                 modifier = Modifier.fillMaxWidth()
             )
 
-<<<<<<< HEAD
-=======
             if (errorMessage != null) {
                 Text(
                     text = errorMessage!!,
@@ -142,7 +123,7 @@ fun RegistrationScreen(
                 )
             }
 
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
+
             // ---- Nimi field ----
             Spacer(modifier = Modifier.height(14.dp))
             Row(
@@ -342,24 +323,6 @@ fun RegistrationScreen(
 
             // Register button
             Spacer(modifier = Modifier.height(20.dp))
-<<<<<<< HEAD
-            Button(
-                onClick = { onRegistrationSuccess() },
-                modifier = Modifier
-                    .size(150.dp, 54.dp)
-                    .align(Alignment.CenterHorizontally),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF62A87C),
-                    contentColor = Color.White
-                ),
-                shape = RoundedCornerShape(16.dp)
-            ) {
-                Text(
-                    text = "Register",
-                    fontSize = 20.sp,
-                    fontFamily = nunitoSemiBold
-                )
-=======
             if (isLoading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
             } else {
@@ -405,7 +368,6 @@ fun RegistrationScreen(
                         fontFamily = nunitoSemiBold
                     )
                 }
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
             }
 
             // "Mine tagasi"

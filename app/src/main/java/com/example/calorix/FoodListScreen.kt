@@ -39,11 +39,7 @@ fun FoodListScreen(
     val nunitoMedium = FontFamily(Font(R.font.nunito_medium))
     val nunitoRegular = FontFamily(Font(R.font.nunito_regular))
 
-<<<<<<< HEAD
-    // Bottom Navigation state - we can keep 'Home' (0) active or no selection
-=======
     // Bottom Navigation state
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
     var selectedItem by remember { mutableStateOf(0) }
     val items = listOf("Home", "Add", "History", "Profile")
     val icons = listOf(Icons.Filled.Home, Icons.Filled.Add, Icons.AutoMirrored.Filled.List, Icons.Filled.Person)
@@ -59,15 +55,6 @@ fun FoodListScreen(
         onDispose {}
     }
 
-<<<<<<< HEAD
-    val foodItems = listOf(
-        "Banaan" to "89 kcal",
-        "Riis (keedetud)" to "130 kcal",
-        "Juust" to "402 kcal",
-        "Leib" to "265 kcal",
-        "Lõhe" to "208 kcal"
-    )
-=======
     var searchQuery by remember { mutableStateOf("") }
     var foodProducts by remember { mutableStateOf<List<FoodProduct>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }
@@ -82,7 +69,6 @@ fun FoodListScreen(
         }
         isLoading = false
     }
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
 
     Scaffold(
         bottomBar = {
@@ -183,11 +169,7 @@ fun FoodListScreen(
                 )
                 Spacer(modifier = Modifier.height(10.dp))
                 
-<<<<<<< HEAD
-                var searchQuery by remember { mutableStateOf("") }
-                
-=======
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
+
                 OutlinedTextField(
                     value = searchQuery,
                     onValueChange = { searchQuery = it },
@@ -215,11 +197,7 @@ fun FoodListScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-<<<<<<< HEAD
-                // Categories Box (looks like search bar but bigger)
-=======
                 // Categories Box
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -249,54 +227,6 @@ fun FoodListScreen(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
 
-<<<<<<< HEAD
-                foodItems.forEach { (name, calories) ->
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(bottom = 14.dp)
-                            .height(60.dp)
-                            .background(Color.White, RoundedCornerShape(14.dp))
-                            .border(0.5.dp, Color(0xFF9C9C9C), RoundedCornerShape(14.dp))
-                            .padding(horizontal = 20.dp),
-                        contentAlignment = Alignment.CenterStart
-                    ) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            Column(verticalArrangement = Arrangement.Center) {
-                                Text(
-                                    text = name,
-                                    fontFamily = nunitoRegular,
-                                    fontSize = 16.sp,
-                                    color = Color.Black
-                                )
-                                Spacer(modifier = Modifier.height(2.dp))
-                                Text(
-                                    text = calories,
-                                    fontFamily = nunitoRegular,
-                                    fontSize = 12.sp,
-                                    color = Color.Gray
-                                )
-                            }
-                            
-                            Box(
-                                modifier = Modifier
-                                    .size(32.dp)
-                                    .background(Color.White, RoundedCornerShape(12.dp))
-                                    .border(1.dp, Color.Black, RoundedCornerShape(12.dp))
-                                    .clickable { /* Add logic */ },
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Default.Add,
-                                    contentDescription = "Add",
-                                    tint = Color.Black,
-                                    modifier = Modifier.size(20.dp)
-                                )
-=======
                 if (isLoading) {
                     CircularProgressIndicator(
                         modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -350,7 +280,6 @@ fun FoodListScreen(
                                         modifier = Modifier.size(20.dp)
                                     )
                                 }
->>>>>>> af8f53d (Seadistasin registreerimise ja sisselogimise ning lisasin ka tooteotsingu (lihtne))
                             }
                         }
                     }
