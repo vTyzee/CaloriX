@@ -56,18 +56,17 @@ fun FoodListScreen(
     }
 
     var searchQuery by remember { mutableStateOf("") }
-    var foodProducts by remember { mutableStateOf<List<FoodProduct>>(emptyList()) }
+    var consumedFoods by remember { mutableStateOf<List<ConsumedFood>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }
 
-    // Load all products initially or search if query exists
-    LaunchedEffect(searchQuery) {
+    LaunchedEffect(Unit) {
         isLoading = true
-        foodProducts = if (searchQuery.isEmpty()) {
-            FirebaseManager.getAllProducts()
-        } else {
-            FirebaseManager.searchProducts(searchQuery)
-        }
+        consumedFoods = FirebaseManager.getConsumedFoods()
         isLoading = false
+    }
+    
+    val filteredFoods = consumedFoods.filter { 
+        it.name.contains(searchQuery, ignoreCase = true) 
     }
 
     Scaffold(
@@ -143,13 +142,13 @@ fun FoodListScreen(
                     
                     Column {
                         Text(
-                            text = "Tooted",
+                            text = "Päevik",
                             fontFamily = nunitoRegular,
                             fontSize = 24.sp,
                             color = Color.Black
                         )
                         Text(
-                            text = "Kalorite tabel",
+                            text = "Sinu toidukorrad",
                             fontFamily = nunitoRegular,
                             fontSize = 14.sp,
                             color = Color(0x99000000)
@@ -219,7 +218,7 @@ fun FoodListScreen(
 
                 // Nimekiri Section
                 Text(
-                    text = "Nimekiri",
+                    text = "Söödud toidud",
                     fontFamily = nunitoRegular,
                     fontSize = 22.sp,
                     color = Color.Black,
@@ -232,8 +231,15 @@ fun FoodListScreen(
                         modifier = Modifier.align(Alignment.CenterHorizontally),
                         color = Color(0xFF549D5C)
                     )
+                } else if (filteredFoods.isEmpty()) {
+                    Text(
+                        text = "Sa pole veel toitu lisanud.",
+                        fontFamily = nunitoRegular,
+                        color = Color.Gray,
+                        modifier = Modifier.padding(16.dp)
+                    )
                 } else {
-                    foodProducts.forEach { product ->
+                    filteredFoods.forEach { product ->
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -258,28 +264,19 @@ fun FoodListScreen(
                                     )
                                     Spacer(modifier = Modifier.height(2.dp))
                                     Text(
-                                        text = "${product.calories} kcal - ${product.unit}",
+                                        text = "${product.calories} kcal - ${product.meal}",
                                         fontFamily = nunitoRegular,
                                         fontSize = 12.sp,
                                         color = Color.Gray
                                     )
                                 }
                                 
-                                Box(
-                                    modifier = Modifier
-                                        .size(32.dp)
-                                        .background(Color.White, RoundedCornerShape(12.dp))
-                                        .border(1.dp, Color.Black, RoundedCornerShape(12.dp))
-                                        .clickable { /* Detail view or add logic */ },
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Icon(
-                                        imageVector = Icons.Default.Add,
-                                        contentDescription = "Add",
-                                        tint = Color.Black,
-                                        modifier = Modifier.size(20.dp)
-                                    )
-                                }
+                                Text(
+                                    text = "${product.calories} kcal",
+                                    fontFamily = nunitoMedium,
+                                    fontSize = 16.sp,
+                                    color = Color(0xFF549D5C)
+                                )
                             }
                         }
                     }

@@ -13,6 +13,20 @@ data class UserProfile(
     val email: String = ""
 )
 
+data class ConsumedFood(
+    val id: String = "",
+    val userId: String = "",
+    val productId: String = "",
+    val name: String = "",
+    val calories: Int = 0,
+    val protein: Double = 0.0,
+    val carbs: Double = 0.0,
+    val fat: Double = 0.0,
+    val unit: String = "",
+    val meal: String = "",
+    val timestamp: Long = 0
+)
+
 object FirebaseManager {
     private const val TAG = "FirebaseManager"
     private val db: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
@@ -20,6 +34,7 @@ object FirebaseManager {
     
     private val productsCollection = db.collection("products")
     private val usersCollection = db.collection("users")
+    private val consumedFoodsCollection = db.collection("consumedFoods")
 
     // --- Authentication ---
     
@@ -67,6 +82,49 @@ object FirebaseManager {
 
     fun logout() {
         auth.signOut()
+    }
+
+    // --- Consumed Foods (Diary) ---
+    
+    suspend fun addConsumedFood(product: FoodProduct, meal: String) {
+        val user = auth.currentUser ?: return
+        try {
+            val docRef = consumedFoodsCollection.document()
+            val consumed = ConsumedFood(
+                id = docRef.id,
+                userId = user.uid,
+                productId = product.id,
+                name = product.name,
+                calories = product.calories,
+                protein = product.protein,
+                carbs = product.carbs,
+                fat = product.fat,
+                unit = product.unit,
+                meal = meal,
+                timestamp = System.currentTimeMillis()
+            )
+            docRef.set(consumed).await()
+            Log.d(TAG, "Added consumed food: ${product.name} for $meal")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error adding consumed food", e)
+        }
+    }
+
+    suspend fun getConsumedFoods(): List<ConsumedFood> {
+        val user = auth.currentUser ?: return emptyList()
+        return try {
+            val result = consumedFoodsCollection
+                .whereEqualTo("userId", user.uid)
+                .get()
+                .await()
+            
+            val foods = result.toObjects(ConsumedFood::class.java)
+            // Sort by timestamp descending (newest first)
+            foods.sortedByDescending { it.timestamp }
+        } catch (e: Exception) {
+            Log.e(TAG, "Error getting consumed foods", e)
+            emptyList()
+        }
     }
 
     // --- Product Search ---

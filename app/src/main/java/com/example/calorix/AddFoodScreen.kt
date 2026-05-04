@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import androidx.compose.foundation.isSystemInDarkTheme
+import kotlinx.coroutines.launch
 
 @Composable
 fun AddFoodScreen(
@@ -100,6 +101,9 @@ fun AddFoodScreen(
     var searchQuery by remember { mutableStateOf("") }
     var searchResults by remember { mutableStateOf<List<FoodProduct>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }
+    
+    val scope = rememberCoroutineScope()
+    val context = androidx.compose.ui.platform.LocalContext.current
 
     // Seed database on first launch and load initial products
     LaunchedEffect(Unit) {
@@ -358,7 +362,12 @@ fun AddFoodScreen(
                                         .size(32.dp)
                                         .background(Color.White, RoundedCornerShape(12.dp))
                                         .border(1.dp, Color.Black, RoundedCornerShape(12.dp))
-                                        .clickable { /* Add to daily log logic */ },
+                                        .clickable { 
+                                            scope.launch {
+                                                FirebaseManager.addConsumedFood(product, selectedMeal)
+                                                android.widget.Toast.makeText(context, "${product.name} lisatud!", android.widget.Toast.LENGTH_SHORT).show()
+                                            }
+                                        },
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Icon(
