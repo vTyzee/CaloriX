@@ -150,9 +150,9 @@ fun RegistrationScreen(
                 placeholder = {
                     Text(
                         text = "Sisesta nimi",
-                        fontSize = 12.5.sp,
+                        fontSize = 16.sp,
                         fontFamily = nunitoRegular,
-                        color = Color.Black.copy(alpha = 0.5f)
+                        color = Color.Gray
                     )
                 },
                 modifier = Modifier
@@ -198,9 +198,9 @@ fun RegistrationScreen(
                 placeholder = {
                     Text(
                         text = "Sisesta e-post",
-                        fontSize = 12.5.sp,
+                        fontSize = 16.sp,
                         fontFamily = nunitoRegular,
-                        color = Color.Black.copy(alpha = 0.5f)
+                        color = Color.Gray
                     )
                 },
                 modifier = Modifier
@@ -247,9 +247,9 @@ fun RegistrationScreen(
                 placeholder = {
                     Text(
                         text = "Sisesta parool",
-                        fontSize = 12.5.sp,
+                        fontSize = 16.sp,
                         fontFamily = nunitoRegular,
-                        color = Color.Black.copy(alpha = 0.5f)
+                        color = Color.Gray
                     )
                 },
                 modifier = Modifier
@@ -297,9 +297,9 @@ fun RegistrationScreen(
                 placeholder = {
                     Text(
                         text = "Kinnita parool",
-                        fontSize = 12.5.sp,
+                        fontSize = 16.sp,
                         fontFamily = nunitoRegular,
-                        color = Color.Black.copy(alpha = 0.5f)
+                        color = Color.Gray
                     )
                 },
                 modifier = Modifier

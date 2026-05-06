@@ -68,7 +68,8 @@ fun EditProfileScreen(
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = { Icon(icons[index], contentDescription = item, modifier = Modifier.size(28.dp)) },
-                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 14.sp) },
+                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 12.sp) },
+                        alwaysShowLabel = true,
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index
@@ -133,7 +134,9 @@ fun EditProfileScreen(
                     }
                     Spacer(modifier = Modifier.width(16.dp))
                     Column {
-                        Text("Toomas, 20", fontFamily = nunitoRegular, fontSize = 24.sp, color = Color.Black)
+                        val currentUser = FirebaseManager.getCurrentUser()
+                        val displayName = currentUser?.displayName ?: "Kasutaja"
+                        Text(displayName, fontFamily = nunitoRegular, fontSize = 24.sp, color = Color.Black)
                         Spacer(modifier = Modifier.height(4.dp))
                         Text("Eesmärk: 2000 kcal/päev", fontFamily = nunitoRegular, fontSize = 16.sp, color = Color.Gray)
                     }

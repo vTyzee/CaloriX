@@ -25,6 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import androidx.compose.foundation.isSystemInDarkTheme
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
 
 @Composable
 fun ProfileScreen(
@@ -56,7 +58,8 @@ fun ProfileScreen(
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = { Icon(icons[index], contentDescription = item, modifier = Modifier.size(28.dp)) },
-                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 14.sp) },
+                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 12.sp) },
+                        alwaysShowLabel = true,
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index
@@ -136,12 +139,15 @@ fun ProfileScreen(
                 Text("Seaded", fontFamily = nunitoRegular, fontSize = 28.sp, color = Color.Black)
                 Spacer(modifier = Modifier.height(16.dp))
                 
+                val context = LocalContext.current
                 val settings = listOf("Päevane norm", "Mõõtühikud", "Teavitused", "Rakendusest")
                 settings.forEach { setting ->
                     Box(
                         modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp).height(64.dp)
                             .background(Color.White, RoundedCornerShape(12.dp))
-                            .clickable { }
+                            .clickable { 
+                                Toast.makeText(context, "Seda funktsiooni pole veel lisatud", Toast.LENGTH_SHORT).show()
+                            }
                             .padding(horizontal = 20.dp),
                         contentAlignment = Alignment.CenterStart
                     ) {

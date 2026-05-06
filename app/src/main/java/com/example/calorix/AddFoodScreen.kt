@@ -130,7 +130,8 @@ fun AddFoodScreen(
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = { Icon(icons[index], contentDescription = item) },
-                        label = { Text(item, fontFamily = nunitoMedium) },
+                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 12.sp) },
+                        alwaysShowLabel = true,
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index
@@ -279,7 +280,7 @@ fun AddFoodScreen(
                         Text(
                             "näiteks: kana", 
                             fontFamily = nunitoRegular,
-                            fontSize = 15.sp,
+                            fontSize = 16.sp,
                             color = Color.Gray
                         ) 
                     },

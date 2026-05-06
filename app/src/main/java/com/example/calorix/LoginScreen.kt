@@ -148,7 +148,7 @@ fun LoginScreen(
                         text = "Sisesta e-post",
                         fontSize = 16.sp,
                         fontFamily = nunitoRegular,
-                        color = Color.Black.copy(alpha = 0.5f)
+                        color = Color.Gray
                     )
                 },
                 modifier = Modifier
@@ -197,7 +197,7 @@ fun LoginScreen(
                         text = "Sisesta parool",
                         fontSize = 16.sp,
                         fontFamily = nunitoRegular,
-                        color = Color.Black.copy(alpha = 0.5f)
+                        color = Color.Gray
                     )
                 },
                 modifier = Modifier

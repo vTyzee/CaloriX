@@ -26,6 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.icons.filled.Delete
+import kotlinx.coroutines.launch
 
 @Composable
 fun FoodListScreen(
@@ -59,6 +61,8 @@ fun FoodListScreen(
     var consumedFoods by remember { mutableStateOf<List<ConsumedFood>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }
 
+    val scope = rememberCoroutineScope()
+
     LaunchedEffect(Unit) {
         isLoading = true
         consumedFoods = FirebaseManager.getConsumedFoods()
@@ -78,7 +82,8 @@ fun FoodListScreen(
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = { Icon(icons[index], contentDescription = item) },
-                        label = { Text(item, fontFamily = nunitoMedium) },
+                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 12.sp) },
+                        alwaysShowLabel = true,
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index
@@ -271,12 +276,28 @@ fun FoodListScreen(
                                     )
                                 }
                                 
-                                Text(
-                                    text = "${product.calories} kcal",
-                                    fontFamily = nunitoMedium,
-                                    fontSize = 16.sp,
-                                    color = Color(0xFF549D5C)
-                                )
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        text = "${product.calories} kcal",
+                                        fontFamily = nunitoMedium,
+                                        fontSize = 16.sp,
+                                        color = Color(0xFF549D5C)
+                                    )
+                                    Spacer(modifier = Modifier.width(12.dp))
+                                    Icon(
+                                        imageVector = Icons.Default.Delete,
+                                        contentDescription = "Delete",
+                                        tint = Color.Red.copy(alpha = 0.7f),
+                                        modifier = Modifier
+                                            .size(24.dp)
+                                            .clickable {
+                                                scope.launch {
+                                                    FirebaseManager.deleteConsumedFood(product.id)
+                                                    consumedFoods = FirebaseManager.getConsumedFoods()
+                                                }
+                                            }
+                                    )
+                                }
                             }
                         }
                     }

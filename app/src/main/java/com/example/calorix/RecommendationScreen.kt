@@ -53,7 +53,8 @@ fun RecommendationScreen(
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = { Icon(icons[index], contentDescription = item, modifier = Modifier.size(28.dp)) },
-                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 14.sp) },
+                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 12.sp) },
+                        alwaysShowLabel = true,
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index

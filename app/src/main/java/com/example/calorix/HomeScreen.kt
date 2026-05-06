@@ -28,6 +28,9 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 @Composable
 fun HomeScreen(
@@ -64,7 +67,8 @@ fun HomeScreen(
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = { Icon(icons[index], contentDescription = item) },
-                        label = { Text(item, fontFamily = nunitoMedium) },
+                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 12.sp) },
+                        alwaysShowLabel = true,
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index
@@ -106,8 +110,11 @@ fun HomeScreen(
                     color = Color.Black,
                     fontFamily = nunitoMedium
                 )
+                val currentDate = remember {
+                    SimpleDateFormat("E, d. MMM", Locale("et", "EE")).format(Date())
+                }
                 Text(
-                    text = "N, 29. jaan",
+                    text = currentDate,
                     fontSize = 16.sp,
                     color = Color.Gray,
                     fontFamily = nunitoMedium,

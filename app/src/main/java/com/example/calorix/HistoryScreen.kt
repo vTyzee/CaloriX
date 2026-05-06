@@ -50,7 +50,8 @@ fun HistoryScreen(
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = { Icon(icons[index], contentDescription = item, modifier = Modifier.size(28.dp)) },
-                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 14.sp) },
+                        label = { Text(item, fontFamily = nunitoMedium, fontSize = 12.sp) },
+                        alwaysShowLabel = true,
                         selected = selectedItem == index,
                         onClick = {
                             selectedItem = index
@@ -119,7 +120,10 @@ fun HistoryScreen(
                     "29 jaanuar" to "2013 kcal",
                     "28 jaanuar" to "1695 kcal",
                     "27 jaanuar" to "1782 kcal",
-                    "26 jaanuar" to "1814 kcal"
+                    "26 jaanuar" to "1814 kcal",
+                    "25 jaanuar" to "1920 kcal",
+                    "24 jaanuar" to "1750 kcal",
+                    "23 jaanuar" to "2100 kcal"
                 )
                 
                 historyItems.forEach { (date, kcal) ->

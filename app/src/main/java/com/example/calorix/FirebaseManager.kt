@@ -110,6 +110,15 @@ object FirebaseManager {
         }
     }
 
+    suspend fun deleteConsumedFood(foodId: String) {
+        try {
+            consumedFoodsCollection.document(foodId).delete().await()
+            Log.d(TAG, "Deleted consumed food: $foodId")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error deleting consumed food", e)
+        }
+    }
+
     suspend fun getConsumedFoods(): List<ConsumedFood> {
         val user = auth.currentUser ?: return emptyList()
         return try {
