@@ -173,32 +173,8 @@ Edaspidi soovime lisada:
 
 
 ## Projekti struktuur
-```
-caloriX/
-├── app/src/main/java/com/example/calorix/
-│   ├── ui/                       # Rakenduse värvid, tüpograafia ja teema
-│   │   └── theme/
-│   │       ├── Color.kt
-│   │       ├── Theme.kt 
-│   │       └── Typography.kt
-│   │
-│   ├── MainActivity.kt           # Rakenduse sisenemispunkt ja navigeerimiskeskus
-│   │
-│   ├── WelcomeScreen.kt          # Avaleht (tervitusekraan)
-│   ├── LoginScreen.kt            # Kasutaja sisselogimise ekraan
-│   ├── RegistrationScreen.kt     # Uue konto loomise ekraan
-│   ├── ForgotPasswordScreen.kt   # Unustatud parooli lähtestamise päring
-│   ├── UusParoolScreen.kt        # Uue turvalise parooli määramine
-│   │
-│   └── HomeScreen.kt             # Peamine töölaud (dashboard) pärast sisselogimist
-│
-├── app/src/main/res/             # Vektorgraafika (SVG/XML pildid), fondid (Nunito)
-└── app/src/androidTest/          # UI (kasutajaliidese) instrumentaaltestid
-    └── tests.kt                  # Automaattestide koodifail
 
-```
-<img width="300" height="822" alt="image" src="https://github.com/user-attachments/assets/5df7c045-9a50-4914-bef9-fc14f3686ea7" />
-
+<img width="275" height="892" alt="image" src="https://github.com/user-attachments/assets/5fb008b3-a979-46ab-965d-972280f7da40" />
 
 
 ## UML diagrammid(kasutusjuhtumi diagramm, Klassi diagramm ja Tegevusdiagramm)
