@@ -5,7 +5,8 @@
 2. Soodustussüsteem või maksesüsteem tuleks viia eraldi plokki (mikroteenus).
 Siin jookseb enamik inimesi müügi ajal kokku. Kui tegemist on eraldi "miniveebisaidiga", saame sellele anda rohkem võimsust ilma, et see kõike muud endaga kaasa tõmbaks.
 
-3. Ruut "Tooted"
+3.
+Ruut "Tooted"
 
 Ruut "Kasutajaprofiil"
 
